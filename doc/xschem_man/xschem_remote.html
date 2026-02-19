@@ -40,6 +40,28 @@ p{padding: 15px  30px 10px;}
  containing the search path.
  </p>
 
+ <h3>MCP WRAPPER COMMANDS</h3>
+ <p>
+ XSchem now provides a dedicated wrapper surface for external MCP tooling. These wrappers are implemented in
+ <kbd>src/xschem.tcl</kbd> with the prefix <kbd>mcp_*</kbd>. They normalize output in JSON format and provide argument
+ validation suitable for bridge processes.
+ </p>
+ <ul>
+ <li><kbd>mcp_get_context</kbd></li>
+ <li><kbd>mcp_list_symbols</kbd></li>
+ <li><kbd>mcp_place_symbol</kbd></li>
+ <li><kbd>mcp_create_symbol</kbd></li>
+ <li><kbd>mcp_set_instance_property</kbd></li>
+ <li><kbd>mcp_generate_netlist</kbd></li>
+ <li><kbd>mcp_run_simulation</kbd></li>
+ <li><kbd>mcp_read_simulation_results</kbd></li>
+ <li><kbd>mcp_annotate_operating_point</kbd></li>
+ </ul>
+ <p>
+ Recommended usage for AI or automation workflows is to invoke these wrappers from a policy-enforcing bridge
+ rather than sending arbitrary Tcl directly.
+ </p>
+
 
  <h3> Handling TCP connection with multiple XSCHEM instances </h3>
  <p> 

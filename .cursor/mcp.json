@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "xschem": {
+      "command": "python3",
+      "args": [
+        "/home/vraj/Documents/xschem-mcp/tools/mcp_bridge/launcher.py",
+        "--xschem-host",
+        "127.0.0.1",
+        "--xschem-port",
+        "2021",
+        "--audit-log",
+        "/tmp/xschem-mcp-audit.jsonl",
+        "--allow-destructive-without-confirm"
+      ]
+    }
+  }
+}

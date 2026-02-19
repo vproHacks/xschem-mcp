@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "XSchem MCP Tool Schemas",
+  "type": "object",
+  "tools": [
+    {
+      "name": "xschem.get_context",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.list_symbols",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "include_derived": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.insert_symbol",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "symbol_name",
+          "x",
+          "y"
+        ],
+        "properties": {
+          "symbol_name": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "rot": {
+            "type": "integer",
+            "default": 0
+          },
+          "flip": {
+            "type": "integer",
+            "default": 0
+          },
+          "inst_props": {
+            "type": "string",
+            "default": ""
+          },
+          "batch_continues": {
+            "type": "boolean",
+            "default": false
+          },
+          "confirm": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.create_symbol",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "out": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "inout": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "overwrite": {
+            "type": "boolean",
+            "default": false
+          },
+          "confirm": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.set_instance_property",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "instance",
+          "token",
+          "value"
+        ],
+        "properties": {
+          "instance": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "fast": {
+            "type": "boolean",
+            "default": false
+          },
+          "confirm": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.generate_netlist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.run_simulation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.read_simulation_results",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "raw_file": {
+            "type": "string",
+            "default": ""
+          },
+          "sim_type": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xschem.annotate_operating_point",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ]
+}
+

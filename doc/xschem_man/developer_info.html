@@ -97,6 +97,24 @@ p{padding: 15px  30px 10px;}
   for symbols (containing the netlisting rules usually).
   See the <a href="xschem_properties.html">XSCHEM properties</a> section of the manual for more info.
  </p>
+ <h3>MCP / EXTERNAL AUTOMATION INTEGRATION</h3>
+ <p>
+ XSchem can be controlled remotely through its Tcl/TCP interface and now exposes dedicated <kbd>mcp_*</kbd> wrapper commands
+ in <kbd>src/xschem.tcl</kbd> for structured automation. These wrappers are intended to be called by an external bridge that
+ provides allowlisted operations, argument validation and audit logging.
+ </p>
+ <p>
+ The recommended architecture is:
+ </p>
+ <ol>
+  <li>XSchem process (authoritative schematic/simulation engine)</li>
+  <li>Local bridge process (MCP tool server and policy layer)</li>
+  <li>Gemini CLI terminal session using registered MCP tools</li>
+ </ol>
+ <p>
+ This keeps XSchem internals stable while enabling tool-based AI workflows (symbol insertion/creation, netlist generation,
+ simulation orchestration, and result loading).
+ </p>
  <h3>COORDINATE SYSTEM</h3>
  <p>
   XSCHEM coordinates are stored as double precision floating point numbers, axis orientation is the same as Xorg

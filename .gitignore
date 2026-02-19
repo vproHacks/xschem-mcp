@@ -32,6 +32,9 @@ src/xschem
 CMakeLists.txt
 .vscode
 
+# Python
+**/__pycache__/
+
 src/Makefile
 scconfig/sccbox
 scconfig/configure
